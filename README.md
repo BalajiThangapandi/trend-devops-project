@@ -1,91 +1,72 @@
-DevOps Practice Project – Dist Directory
+# Trendify DevOps CI/CD Project
 
-This repository contains the production-ready build files (dist folder) for DevOps practice and deployment exercises.
+## Project Overview
 
-It is intentionally structured to help learners focus on CI/CD pipelines, hosting, containerization, and infrastructure setup rather than application development.
+This project demonstrates an end-to-end DevOps CI/CD pipeline using GitHub, Jenkins, Docker, DockerHub, and Kubernetes.
 
-📁 What This Repository Contains
+The application was deployed into Kubernetes using Minikube and exposed through a Kubernetes service.
 
-dist/ – Compiled and production-ready static files
+---
 
-HTML
+## Technologies Used
 
-CSS
+* Git & GitHub
+* Docker
+* DockerHub
+* Jenkins
+* Kubernetes
+* Minikube
+* AWS EC2
 
-JavaScript
+---
 
-Assets (images, fonts, etc.)
+## Project Architecture
 
-These files are ready to deploy to:
+GitHub Repository
+↓
+Jenkins Pipeline
+↓
+Docker Build
+↓
+DockerHub Push
+↓
+Kubernetes Deployment
+↓
+Running Application
 
-Web servers (Nginx / Apache)
+---
 
-Cloud platforms (AWS S3, Azure Blob, GCP Storage)
+## Docker Commands
 
-Containerized environments (Docker + Nginx)
+docker build -t balajithangapandi/trend-app:latest .
+docker push balajithangapandi/trend-app:latest
 
-Kubernetes clusters
+---
 
-CI/CD pipeline demonstrations
+## Kubernetes Commands
 
-🎯 Purpose of This Repository
+kubectl create deployment trend-app --image=balajithangapandi/trend-app:latest
 
-This repository is designed for:
+kubectl expose deployment trend-app --type=NodePort --port=80
 
-DevOps beginners
+kubectl get pods
 
-CI/CD practice
+kubectl get svc
 
-Deployment pipeline testing
+---
 
-Docker & Kubernetes deployment exercises
+## Jenkins Pipeline Stages
 
-Web server configuration practice
+1. Clone Repository
+2. Build Docker Image
+3. DockerHub Login
+4. Push Docker Image
 
-Reverse proxy and load balancer setup
+---
 
-The goal is to simulate real-world deployment scenarios using already built application files.
+## GitHub Repository
 
-❓ Why is there NO package.json?
+Repository Link:
+https://github.com/BalajiThangapandi/trend-devops-project
 
-You may notice that this repository does not include:
-
-package.json
-
-node_modules
-
-Source code (src/)
-
-Build tools configuration
-
-✅ Reason:
-
-This repository only contains the final production build output (dist), not the development source code.
-
-In a typical project:
-
-Developers write source code.
-
-The project is built using tools like:
-
-Node.js
-
-Webpack
-
-Vite
-
-React (or other frameworks)
-
-A dist/ folder is generated.
-
-Only the production build is deployed to servers.
-
-This repository represents step 4 only.
-
-Since this is already the compiled output:
-
-No dependencies are required
-
-No build process is required
-
-No package.json is needed
+---
