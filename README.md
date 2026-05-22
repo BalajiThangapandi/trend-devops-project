@@ -63,10 +63,3 @@ kubectl get svc
 4. Push Docker Image
 
 ---
-
-## GitHub Repository
-
-Repository Link:
-https://github.com/BalajiThangapandi/trend-devops-project
-
----
